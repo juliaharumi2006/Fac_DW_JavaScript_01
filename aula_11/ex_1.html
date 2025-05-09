@@ -1,0 +1,57 @@
+<!-- 1. **Calcular a média de 3 notas**
+    - Peça 3 notas, calcule a média e diga se o aluno foi aprovado (média ≥ 6). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex_1 Gerador de Média</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1{
+            color: rgb(135, 135, 243);
+            : 2px;
+        }
+        button{
+            background-color: rgb(135, 135, 243);
+        }
+        div{
+            margin-top: 40px;
+            font: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de média</h1>
+    <input type="text" id="nota1" placeholder="Digite a primeira nota">
+    <input type="text" id="nota2" placeholder="Digite a segunda nota">
+    <input type="text" id="nota3" placeholder="Digite a terceira nota">
+    <button onclick="gerar()">Gerar média</button>
+
+    <div id="media"></div>
+
+    <script>
+        function gerar(){
+            const nt1 = parseFloat(document.getElementById("nota1").value);
+            const nt2 = parseFloat(document.getElementById("nota2").value);
+            const nt3 = parseFloat(document.getElementById("nota3").value);
+            const resultado = document.getElementById("media");
+
+            const media = (nt1+nt2+nt3)/3.0;
+
+            if(isNaN(nt1, nt2, nt3)){
+                resultado.textContent = `Digite um número!`;
+                return;
+            }else{
+                resultado.textContent = `A média dos valores é ${media}`;
+            }
+        }
+    </script>
+</body>
+</html>
