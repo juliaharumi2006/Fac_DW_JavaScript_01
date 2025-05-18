@@ -2,13 +2,39 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabuada de um número</title>
 </head>
+
 <body>
     <h1>Gerador de Tabuadas</h1>
     <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="gerar()">Gerar tabuada</button>
+
+    <div id="tabuada"></div>
+
+    <script>
+        function gerar() {
+            const n = parseInt(document.getElementById("numero").value);
+            const div_tabuada = document.getElementById("tabuada");
+
+            div_tabuada.innerHTML = "";
+
+            // for (let i = 1; i <= 10; i++) {
+            //     let multp = n * i;
+            //     const linha = document.createElement("p");
+            //     linha.textContent = `${n} x ${i} = ${multp}`;
+            //     div_tabuada.appendChild(linha);
+            // }
+            for(let i=1;i<=10;i++){
+                let multp = n * i;
+                div_tabuada.textContent = `${n} X ${i} = ${multp}\n`; 
+            }
+        }
+    </script>
 </body>
+
 </html>
